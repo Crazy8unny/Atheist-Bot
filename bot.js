@@ -13,6 +13,7 @@ var bot = new Discord.Client({
    token: process.env.token,
    autorun: true
 });
+
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
@@ -24,35 +25,41 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
-        switch(message.substring(1, message.length)) {
+		let msg = message.substring(1, message.length).toLowerCase();
             // !ping
-            case 'big bang':
+            if (msg == 'big bang') {
 				bot.sendMessage({
 					to: channelID,
 					message: 'וואלה אני סתם אפס כרגע שלא עושה כלום כזה'
 				});
-            break;
-            case 'Big Bang':
-				bot.sendMessage({
-					to: channelID,
-					message: 'וואלה אני סתם אפס כרגע שלא עושה כלום כזה'
-				});
-            break;
-			case 'link':
+			}
+			else if (msg == 'link') {
 				bot.sendMessage({
 					to: channelID,
 					message: 'https://discordapp.com/oauth2/authorize?client_id=532223706844495872&scope=bot&permissions=0'
 				});
-            break;
-			case 'יש אלוהים ?':
+			}
+			else if (msg.startsWith('יש אלוהים')) {
 				bot.sendMessage({
 					to: channelID,
 					message: 'אין אלוהים !'
 				});
-            break;
-			default: 
-				break;
-            // Just add any case commands if you want to..
-         }
+			}
+			else if (msg.startsWith('יש')) {
+				bot.sendMessage({
+					to: channelID,
+					message: 'אין אחי !'
+				});
+			}
+			else if (msg.startsWith('למי מצביעים')) {
+				bot.sendMessage({
+					to: channelID,
+					message: 'רק ביבי !'
+				});
+			}
+			else {
+			
+			}
+		}
      }
 });
