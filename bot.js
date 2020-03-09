@@ -57,7 +57,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'רק ביבי !'
 				});
 			}
-	    		else if (msg == ''ראית שטיינס גייט?') {
+	    		else if (msg == 'ראית שטיינס גייט?') {
 				bot.sendMessage({
 					to: channelID,
 					message: 'פחחחח נראה לך  !'
@@ -75,7 +75,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'היי אורי !'
 				});
 			}
-			else if (msg == ''לא קוראים לי אורי') {
+			else if (msg == 'לא קוראים לי אורי') {
 				bot.sendMessage({
 					to: channelID,
 					message: 'חחח מצחיק אורי'
