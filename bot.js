@@ -57,13 +57,16 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'רק ביבי !'
 				});
 			}
+	    
+	    
+	    
 	    		else if (msg == 'ראית שטיינס גייט?') {
 				bot.sendMessage({
 					to: channelID,
 					message: 'פחחחח נראה לך  !'
 				});
 			}
-			else if (msg == ''מה עם סטארגייט?') {
+			else if (msg == 'מה עם סטארגייט?') {
 				bot.sendMessage({
 					to: channelID,
 					message: 'זה התוכנית של האלה שעוברים בין עולמים ומפיצים אתאיזם? לא מכיר'
@@ -81,6 +84,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'חחח מצחיק אורי'
 				});
 			}
+	    
+	    
+	    
 			else {
 			
 			}
