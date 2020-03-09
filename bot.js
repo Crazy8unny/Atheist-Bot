@@ -57,16 +57,28 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'רק ביבי !'
 				});
 			}
-	    		else if (msg.startsWith('ראית שטיינס גייט?')) {
+	    		else if (msg == ''ראית שטיינס גייט?') {
 				bot.sendMessage({
 					to: channelID,
 					message: 'פחחחח נראה לך  !'
+				});
+			}
+			else if (msg == ''מה עם סטארגייט?') {
+				bot.sendMessage({
+					to: channelID,
+					message: 'זה התוכנית של האלה שעוברים בין עולמים ומפיצים אתאיזם? לא מכיר'
 				});
 			}
 	    		else if (msg.startsWith('היי')) {
 				bot.sendMessage({
 					to: channelID,
 					message: 'היי אורי !'
+				});
+			}
+			else if (msg == ''לא קוראים לי אורי') {
+				bot.sendMessage({
+					to: channelID,
+					message: 'חחח מצחיק אורי'
 				});
 			}
 			else {
