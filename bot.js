@@ -72,10 +72,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'זה התוכנית של האלה שעוברים בין עולמים ומפיצים אתאיזם? לא מכיר'
 				});
 			}
-	    		else if (msg.startsWith('היי')) {
+	   
+			else if (msg == 'היי') {
 				bot.sendMessage({
 					to: channelID,
-					message: 'היי אורי !'
+					message: 'חחח מצחיק אורי'
 				});
 			}
 			else if (msg == 'לא קוראים לי אורי') {
@@ -84,7 +85,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'חחח מצחיק אורי'
 				});
 			}
-	    
+			else if (msg == 'אני לא אורי אומרים לך') {
+				bot.sendMessage({
+					to: channelID,
+					message: 'אתה והשטויות שלך'
+				});
+			}
 	    
 	    
 			else {
