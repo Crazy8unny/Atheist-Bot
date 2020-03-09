@@ -91,10 +91,32 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'אתה והשטויות שלך'
 				});
 			}
-	    
+	    		else if (msg.startsWith('הגרל')) {
+				let numberString = msg.substring(5,msg.length);
+				let numbers = msg.split('-');
+				let res;
+				if (numbers.length == 2) {
+					try {
+						res = Math.floor(Math.random() * parseInt(numbers[1]) + parseInt(numbers[0]));
+					}
+					catch {
+						res = "אורי מה זה השטויות האלה ששמת פה"
+					}
+				}
+				else {
+					res = "אתה צריך לשלוח  שתי מספרים עם - מפריד ביניהם אורי"
+				}
+				bot.sendMessage({
+					to: channelID,
+					message: res
+				});
+			}
 	    
 			else {
-			
+				bot.sendMessage({
+					to: channelID,
+					message: 'חחח מצחיק אורי'
+				});
 			}
      }
 });
