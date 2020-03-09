@@ -93,7 +93,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			}
 	    		else if (msg.startsWith('הגרל')) {
 				let numberString = msg.substring(5,msg.length);
-				let numbers = msg.split('-');
+				let numbers = numberString.split('-');
 				let res;
 				if (numbers.length == 2) {
 					try {
