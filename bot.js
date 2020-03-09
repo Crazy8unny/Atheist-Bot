@@ -57,6 +57,18 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					message: 'רק ביבי !'
 				});
 			}
+	    		else if (msg.startsWith('ראית שטיינס גייט?')) {
+				bot.sendMessage({
+					to: channelID,
+					message: 'פחחחח נראה לך  !'
+				});
+			}
+	    		else if (msg.startsWith('היי')) {
+				bot.sendMessage({
+					to: channelID,
+					message: 'היי אורי !'
+				});
+			}
 			else {
 			
 			}
