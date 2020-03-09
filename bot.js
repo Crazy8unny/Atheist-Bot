@@ -97,7 +97,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				let res;
 				if (numbers.length == 2) {
 					res = Math.floor(Math.random() * parseInt(numbers[1]) + parseInt(numbers[0]));
-					if (res == 'NaN') {
+					if (res.toString() == 'NaN') {
 						res = "אורי מה זה השטויות האלה ששמת פה"
 					}
 				}
