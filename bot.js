@@ -96,10 +96,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				let numbers = numberString.split('-');
 				let res;
 				if (numbers.length == 2) {
-					try {
-						res = Math.floor(Math.random() * parseInt(numbers[1]) + parseInt(numbers[0]));
-					}
-					catch {
+					res = Math.floor(Math.random() * parseInt(numbers[1]) + parseInt(numbers[0]));
+					if (res == 'NaN') {
 						res = "אורי מה זה השטויות האלה ששמת פה"
 					}
 				}
