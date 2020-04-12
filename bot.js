@@ -1,3 +1,7 @@
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 var Discord = require('discord.io');
 var logger = require('winston');
 
@@ -144,7 +148,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 						to: channelID,
 						message: res.toString()
 					});
-					sleep(1000);
+					await sleep(1000);
 					res--;
 				}
 			}
