@@ -140,7 +140,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					});	
 				}
 				while (res > 0) 
-					setTimeout(function(){ console.log(res.toString()); }, 1000);
 					res--;
 				}
 			}
