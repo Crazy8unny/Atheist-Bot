@@ -114,7 +114,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				let numberString = msg.substring(3,msg.length);
 				let numbers = numberString.split(' או ');
 				let res;
-				if (numbers.length != 0) {
+				if (numbers.length > 1) {
 					res = numbers[Math.floor(Math.random() * numbers.length)];
 				}
 				else {
