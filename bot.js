@@ -139,8 +139,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 						message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
 					});	
 				}
-				while (res > 0) {
-					setTimeout({console.log(res.toString());}, 1000);
+				while (res > 0) 
+					setTimeout(function(){ console.log(res.toString()); }, 1000);
 					res--;
 				}
 			}
