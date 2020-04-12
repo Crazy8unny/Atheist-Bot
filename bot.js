@@ -126,6 +126,30 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				});
 			}
 	    
+	    		else if (msg.startsWith('ספור')) {
+				let numberString = msg.substring(4,msg.length);
+				let res = parseInt(numberString);
+				if (numberString == '') {
+					res = 5;
+				}
+				if (res.toString() == 'NaN' || res > 100) {
+					res = 0;
+					bot.sendMessage({
+						to: channelID,
+						message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
+					});	
+				}
+				=
+				while (res > 0) {
+					bot.sendMessage({
+						to: channelID,
+						message: res.toString()
+					});
+					wait(1000);
+					res--;
+				}
+			}
+	    
 			else {
 				bot.sendMessage({
 					to: channelID,
