@@ -129,7 +129,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	    		else if (msg.startsWith('ספור')) {
 				let numberString = msg.substring(4,msg.length);
 				let res = parseInt(numberString);
-				if (numberString == '') {
+				if (numberString.length == 0) {
 					res = 5;
 				}
 				if (res.toString() == 'NaN' || res > 100) {
