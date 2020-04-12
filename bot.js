@@ -110,6 +110,22 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 				});
 			}
 	    
+	    		else if (msg.startsWith('בחר')) {
+				let numberString = msg.substring(3,msg.length);
+				let numbers = numberString.split('|');
+				let res;
+				if (numbers.length > 0) {
+					res = numbers[Math.floor(Math.random() * numbers.length)];
+				}
+				else {
+					res = "אתה צריך לשלוח מספר אפשרויות עם | מפריד ביניהם אורי"
+				}
+				bot.sendMessage({
+					to: channelID,
+					message: res.toString()
+				});
+			}
+	    
 			else {
 				bot.sendMessage({
 					to: channelID,
