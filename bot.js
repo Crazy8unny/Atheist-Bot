@@ -1,10 +1,3 @@
-function wait(ms) {
-	var d = new Date();
-	var d2 = null;
-	do { d2 = new Date(); }
-	while(d2-d < ms);
-}
-
 var Discord = require('discord.io');
 var logger = require('winston');
 
@@ -151,7 +144,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 						to: channelID,
 						message: res.toString()
 					});
-					wait(1000);
+					sleep(1000);
 					res--;
 				}
 			}
