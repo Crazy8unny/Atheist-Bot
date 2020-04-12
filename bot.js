@@ -1,7 +1,3 @@
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 var Discord = require('discord.io');
 var logger = require('winston');
 
@@ -144,11 +140,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					});	
 				}
 				while (res > 0) {
+					setTimeout({
 					bot.sendMessage({
 						to: channelID,
 						message: res.toString()
-					});
-					await sleep(1000);
+					});}, 1000);
 					res--;
 				}
 			}
