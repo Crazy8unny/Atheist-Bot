@@ -139,7 +139,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 						message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
 					});	
 				}
-				while (res > 0) 
+				while (res > 0) { 
 					res--;
 				}
 			}
