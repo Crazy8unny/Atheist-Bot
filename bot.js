@@ -140,10 +140,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					});	
 				}
 				while (res > 0) { 
-					setTimeout(function(){ bot.sendMessage({
+					setTimeout(function(){}, 1000);
+					bot.sendMessage({
 						to: channelID,
 						message: res.toString()
-					});	 }, 1000);
+					});	 
 					res--;
 				}
 			}
