@@ -110,15 +110,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             // }
             let countdown = 5;
             let count = setInterval(() => {
-                while (countdown > 0) {
-                    bot.sendMessage({
-                        to: channelID,
-                        message: countdown.toString()
-                    });
-                    countdown--;
+                bot.sendMessage({
+                    to: channelID,
+                    message: countdown.toString()
+                });
+                countdown--;
+                if (countdown == 0) {
+                    clearInterval(count);
                 }
-                clearInterval(count);
-            }, 1000);            
+            }, 1000);
             res = false;
         }
         else {
