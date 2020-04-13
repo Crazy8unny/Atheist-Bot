@@ -109,7 +109,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             // 	res--;
             // }
             let countdown = 5;
-            setInterval(() => {
+            let count = setInterval(() => {
                 while (countdown > 0) {
                     bot.sendMessage({
                         to: channelID,
@@ -117,7 +117,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     });
                     countdown--;
                 }
-                break;
+                clearInterval(count);
             }, 1000);            
             res = false;
         }
