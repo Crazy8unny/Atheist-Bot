@@ -93,7 +93,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             if (numberString.length == 0) {
                 countdown = 5;
             }
-            if (countdown.toString() == 'NaN' || countdown > 100) {
+            if (countdown.toString() == 'NaN' || countdown > 100 || countdown < 0) {
                 countdown = 0;
                 bot.sendMessage({
                     to: channelID,
