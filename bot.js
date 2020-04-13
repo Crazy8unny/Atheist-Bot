@@ -114,6 +114,30 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: '1'
                 });
             }, 1000);
+            setTimeout(function () {
+                bot.sendMessage({
+                    to: channelID,
+                    message: '1'
+                });
+            }, 1000);
+            setTimeout(function () {
+                bot.sendMessage({
+                    to: channelID,
+                    message: '1'
+                });
+            }, 1000);
+            setTimeout(function () {
+                bot.sendMessage({
+                    to: channelID,
+                    message: '1'
+                });
+            }, 1000);
+            setTimeout(function () {
+                bot.sendMessage({
+                    to: channelID,
+                    message: '1'
+                });
+            }, 1000);
             res = false;
         }
         else {
