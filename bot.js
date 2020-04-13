@@ -101,7 +101,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             }
             let count = setInterval(() => {
-                if (countdown == 0) {
+                if (countdown <= 0) {
                     clearInterval(count);
                 }
                 else {
