@@ -108,36 +108,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             // 	});	 
             // 	res--;
             // }
-            setTimeout(function () {
-                bot.sendMessage({
-                    to: channelID,
-                    message: '1'
-                });
-            }, 1000);
-            setTimeout(function () {
-                bot.sendMessage({
-                    to: channelID,
-                    message: '1'
-                });
-            }, 1000);
-            setTimeout(function () {
-                bot.sendMessage({
-                    to: channelID,
-                    message: '1'
-                });
-            }, 1000);
-            setTimeout(function () {
-                bot.sendMessage({
-                    to: channelID,
-                    message: '1'
-                });
-            }, 1000);
-            setTimeout(function () {
-                bot.sendMessage({
-                    to: channelID,
-                    message: '1'
-                });
-            }, 1000);
+            let countdown = 5;
+            setInterval(() => {
+                while (countdown > 0) {
+                    bot.sendMessage({
+                        to: channelID,
+                        message: countdown.toString()
+                    });
+                    countdown--;
+                }
+                break;
+            }, 1000);            
             res = false;
         }
         else {
