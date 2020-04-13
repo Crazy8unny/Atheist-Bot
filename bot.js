@@ -10,8 +10,8 @@ logger.level = 'debug';
 
 // Initialize Discord Bot
 var bot = new Discord.Client({
-   token: process.env.token,
-   autorun: true
+    token: process.env.token,
+    autorun: true
 });
 
 bot.on('ready', function (evt) {
@@ -21,139 +21,103 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-	
+
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
-		let msg = (message.substring(1, message.length)).toLowerCase();
-            // !ping
-            if (msg == 'big bang') {
-				bot.sendMessage({
-					to: channelID,
-					message: 'וואלה אני סתם אפס כרגע שלא עושה כלום כזה'
-				});
-			}
-			else if (msg == 'link') {
-				bot.sendMessage({
-					to: channelID,
-					message: 'https://discordapp.com/oauth2/authorize?client_id=532223706844495872&scope=bot&permissions=0'
-				});
-			}
-			else if (msg.startsWith('יש אלוהים')) {
-				bot.sendMessage({
-					to: channelID,
-					message: 'אין אלוהים !'
-				});
-			}
-			else if (msg.startsWith('יש')) {
-				bot.sendMessage({
-					to: channelID,
-					message: 'אין אחי !'
-				});
-			}
-			else if (msg.startsWith('למי מצביעים')) {
-				bot.sendMessage({
-					to: channelID,
-					message: 'רק ביבי !'
-				});
-			}
-	    
-	    
-	    
-	    		else if (msg == 'ראית שטיינס גייט?') {
-				bot.sendMessage({
-					to: channelID,
-					message: 'פחחחח נראה לך  !'
-				});
-			}
-			else if (msg == 'מה עם סטארגייט?') {
-				bot.sendMessage({
-					to: channelID,
-					message: 'זה התוכנית של האלה שעוברים בין עולמים ומפיצים אתאיזם? לא מכיר'
-				});
-			}
-	   
-			else if (msg == 'היי') {
-				bot.sendMessage({
-					to: channelID,
-					message: 'חחח מצחיק אורי'
-				});
-			}
-			else if (msg == 'לא קוראים לי אורי') {
-				bot.sendMessage({
-					to: channelID,
-					message: 'חחח מצחיק אורי'
-				});
-			}
-			else if (msg == 'אני לא אורי אומרים לך') {
-				bot.sendMessage({
-					to: channelID,
-					message: 'אתה והשטויות שלך'
-				});
-			}
-	    		else if (msg.startsWith('הגרל')) {
-				let numberString = msg.substring(5,msg.length);
-				let numbers = numberString.split('-');
-				let res;
-				if (numbers.length == 2) {
-					res = Math.floor(Math.random() * parseInt(numbers[1]) + parseInt(numbers[0]));
-					if (res.toString() == 'NaN') {
-						res = "אורי מה זה השטויות האלה ששמת פה"
-					}
-				}
-				else {
-					res = "אתה צריך לשלוח  שתי מספרים עם - מפריד ביניהם אורי"
-				}
-				bot.sendMessage({
-					to: channelID,
-					message: res.toString()
-				});
-			}
-	    
-	    		else if (msg.startsWith('בחר')) {
-				let numberString = msg.substring(3,msg.length);
-				let numbers = numberString.split(' או ');
-				let res;
-				if (numbers.length > 1) {
-					res = numbers[Math.floor(Math.random() * numbers.length)];
-				}
-				else {
-					res = "אתה צריך לשלוח מספר אפשרויות עם ''או'' מפריד ביניהם אורי"
-				}
-				bot.sendMessage({
-					to: channelID,
-					message: res.toString()
-				});
-			}
-	    
-	    		else if (msg.startsWith('ספור')) {
-				let numberString = msg.substring(4,msg.length);
-				let res = parseInt(numberString);
-				if (numberString.length == 0) {
-					res = 5;
-				}
-				if (res.toString() == 'NaN' || res > 100) {
-					res = 0;
-					bot.sendMessage({
-						to: channelID,
-						message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
-					});	
-				}
-				while (res > 0) { 
-					setTimeout(function(){}, 1000);
-					bot.sendMessage({
-						to: channelID,
-						message: res.toString()
-					});	 
-					res--;
-				}
-			}
-	    
-			else {
-				bot.sendMessage({
-					to: channelID,
-					message: 'חחח מצחיק אורי'
-				});
-			}
-     }
+        let msg = (message.substring(1, message.length)).toLowerCase();
+        // !ping
+        let res;
+        if (msg == 'big bang') {
+            res = 'וואלה אני סתם אפס כרגע שלא עושה כלום כזה';
+        }
+        else if (msg == 'link') {
+            res = 'https://discordapp.com/oauth2/authorize?client_id=532223706844495872&scope=bot&permissions=0';
+        }
+        else if (msg.startsWith('יש אלוהים')) {
+            res = 'אין אלוהים !';
+        }
+        else if (msg.startsWith('יש')) {
+            res = 'אין אחי !';
+        }
+        else if (msg.startsWith('למי מצביעים')) {
+            res = 'רק ביבי !';
+        }
+        else if (msg == 'ראית שטיינס גייט?') {
+            res = 'פחחחח נראה לך  !';
+        }
+        else if (msg == 'מה עם סטארגייט?') {
+            res = 'זה התוכנית של האלה שעוברים בין עולמים ומפיצים אתאיזם? לא מכיר';
+        }
+        // else if (msg == 'היי') {
+        // 	bot.sendMessage({
+        // 		to: channelID,
+        // 		message: 'חחח מצחיק אורי'
+        // 	});
+        // }
+        // else if (msg == 'לא קוראים לי אורי') {
+        // 	bot.sendMessage({
+        // 		to: channelID,
+        // 		message: 'חחח מצחיק אורי'
+        // 	});
+        // }
+        else if (msg == 'אני לא אורי אומרים לך') {
+            res = 'אתה והשטויות שלך';
+        }
+        else if (msg.startsWith('הגרל')) {
+            let numberString = msg.substring(5, msg.length);
+            let numbers = numberString.split('-');
+            if (numbers.length == 2) {
+                res = Math.floor(Math.random() * parseInt(numbers[1]) + parseInt(numbers[0]));
+                if (res.toString() == 'NaN') {
+                    res = "אורי מה זה השטויות האלה ששמת פה"
+                }
+            }
+            else {
+                res = "אתה צריך לשלוח  שתי מספרים עם - מפריד ביניהם אורי"
+            }
+        }
+        else if (msg.startsWith('בחר')) {
+            let numberString = msg.substring(3, msg.length);
+            let numbers = numberString.split(' או ');
+            if (numbers.length > 1) {
+                res = numbers[Math.floor(Math.random() * numbers.length)];
+            }
+            else {
+                res = "אתה צריך לשלוח מספר אפשרויות עם ''או'' מפריד ביניהם אורי"
+            }
+        }
+        // else if (msg.startsWith('ספור')) {
+        // 	let numberString = msg.substring(4,msg.length);
+        // 	let res = parseInt(numberString);
+        // 	if (numberString.length == 0) {
+        // 		res = 5;
+        // 	}
+        // 	if (res.toString() == 'NaN' || res > 100) {
+        // 		res = 0;
+        // 		bot.sendMessage({
+        // 			to: channelID,
+        // 			message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
+        // 		});	
+        // 	}
+        // 	while (res > 0) { 
+        // 		setTimeout(function(){}, 1000);
+        // 		bot.sendMessage({
+        // 			to: channelID,
+        // 			message: res.toString()
+        // 		});	 
+        // 		res--;
+        // 	}
+        // }
+        else {
+            res = 'חחח מצחיק אורי';
+        }
+        bot.sendMessage({
+            to: channelID,
+            message: res.toString()
+        });
+    }
+    else {
+
+    }
 });
