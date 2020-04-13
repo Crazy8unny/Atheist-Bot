@@ -88,39 +88,43 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             }
         }
         else if (msg.startsWith('ספור')) {
-        	// let numberString = msg.substring(4,msg.length);
-        	// let res = parseInt(numberString);
-        	// if (numberString.length == 0) {
-        	// 	res = 5;
-        	// }
-        	// if (res.toString() == 'NaN' || res > 100) {
-        	// 	res = 0;
-        	// 	bot.sendMessage({
-        	// 		to: channelID,
-        	// 		message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
-        	// 	});	
-        	// }
-        	// while (res > 0) { 
-        	//  
-        	// 	bot.sendMessage({
-        	// 		to: channelID,
-        	// 		message: res.toString()
-        	// 	});	 
-        	// 	res--;
+            // let numberString = msg.substring(4,msg.length);
+            // let res = parseInt(numberString);
+            // if (numberString.length == 0) {
+            // 	res = 5;
             // }
-            setTimeout(function() {
+            // if (res.toString() == 'NaN' || res > 100) {
+            // 	res = 0;
+            // 	bot.sendMessage({
+            // 		to: channelID,
+            // 		message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
+            // 	});	
+            // }
+            // while (res > 0) { 
+            //  
+            // 	bot.sendMessage({
+            // 		to: channelID,
+            // 		message: res.toString()
+            // 	});	 
+            // 	res--;
+            // }
+            setTimeout(function () {
                 bot.sendMessage({
-                to: channelID,
-                message: '1'});
+                    to: channelID,
+                    message: '1'
+                });
             }, 1000);
+            res = false;
         }
         else {
             res = 'חחח מצחיק אורי';
         }
-        bot.sendMessage({
-            to: channelID,
-            message: res.toString()
-        });
+        if (res != false) {
+            bot.sendMessage({
+                to: channelID,
+                message: res.toString()
+            });
+        }
     }
     else {
 
