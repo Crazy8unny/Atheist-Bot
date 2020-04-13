@@ -88,27 +88,29 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             }
         }
         else if (msg.startsWith('ספור')) {
-            let numberString = msg.substring(4,msg.length);
+            let numberString = msg.substring(4, msg.length);
             let countdown = parseInt(numberString);
             if (numberString.length == 0) {
-            	countdown = 5;
+                countdown = 5;
             }
             if (countdown.toString() == 'NaN' || countdown > 100) {
-            	countdown = 0;
-            	bot.sendMessage({
-            		to: channelID,
-            		message: '(עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות'
-            	});	
+                countdown = 0;
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'עליך לציין מספר שניות לאחר הפקודה (עד 100 שניות)'
+                });
             }
             let count = setInterval(() => {
                 if (countdown == 0) {
                     clearInterval(count);
                 }
-                bot.sendMessage({
-                    to: channelID,
-                    message: countdown.toString()
-                });
-                countdown--;
+                else {
+                    bot.sendMessage({
+                        to: channelID,
+                        message: countdown.toString()
+                    });
+                    countdown--;
+                }
             }, 1000);
             res = false;
         }
