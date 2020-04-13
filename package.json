@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My own Discord bot",
   "main": "bot.js",
-  "author": "YOUR-NAME-HERE",
+  "author": "CrazyBunny",
   "dependencies": {
     "ajax-request": "^1.2.3",
     "axios": "^0.16.2",
